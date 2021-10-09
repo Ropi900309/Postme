@@ -1,0 +1,20 @@
+{
+  "name": "postme",
+  "version": "1.0.0",
+  "description": "aplicacion que permite enviar texto, audio, imagenes y video",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -c -1."
+    },
+  "keywords": [
+    "postme",
+    "pwa",
+    "utcv"
+  ],
+  "author": "14427@utcv.edu.mx",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^13.0.2"
+  }
+}
