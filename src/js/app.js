@@ -5,13 +5,21 @@ let BTN_SHOW_POST;
 let BTN_CANCEL_POST;
 
 // Cuando se cargue todo nuestro DOM
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
     MAIN = document.querySelector('#main');
     MODAL_POST = document.querySelector('#modal-post-section');
     BTN_SHOW_POST = document.querySelector('#btn-upload-post');
     BTN_SHOW_POST.addEventListener('click', showPostModal);
     BTN_CANCEL_POST = document.querySelector('#btn-post-cancel');
-    BTN_CANCEL_POST.addEventListener('click', closePostModal)
+    BTN_CANCEL_POST.addEventListener('click', closePostModal);
+
+    if(navigator.serviceWorker){
+      const response=await navigator.serviceWorker.register('sw.js');
+
+      if (response){
+        console.log('Service worker registrado');
+      }
+    }
   });
 
   const showPostModal = () => {
@@ -25,3 +33,4 @@ window.addEventListener('load', () => {
     MAIN.style.display = 'block';
     MODAL_POST.style.transform = 'translateY(100vh)';
   };
+
